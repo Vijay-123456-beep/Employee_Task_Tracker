@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS employee_task_tracker;
+USE employee_task_tracker;
+
+CREATE TABLE IF NOT EXISTS tasks (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  description TEXT,
+  assignee VARCHAR(120) NOT NULL,
+  status VARCHAR(32) NOT NULL DEFAULT 'TODO',
+  due_date DATE NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

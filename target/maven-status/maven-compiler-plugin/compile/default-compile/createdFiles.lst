@@ -1,0 +1,4 @@
+com\example\tasktracker\model\Task.class
+com\example\tasktracker\util\DBUtil.class
+com\example\tasktracker\dao\TaskDAO.class
+com\example\tasktracker\servlet\TaskServlet.class
