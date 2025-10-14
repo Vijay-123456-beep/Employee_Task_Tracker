@@ -1,0 +1,28 @@
+services:
+  # Web Service
+  - type: web
+    name: employee-task-tracker
+    env: java
+    buildCommand: mvn clean package
+    startCommand: java -jar target/employee-task-tracker-1.0.0.war
+    envVars:
+      - key: DB_URL
+        fromDatabase:
+          name: employee-task-db
+          property: connectionString
+      - key: DB_USER
+        fromDatabase:
+          name: employee-task-db
+          property: user
+      - key: DB_PASS
+        fromDatabase:
+          name: employee-task-db
+          property: password
+      - key: JAVA_OPTS
+        value: "-Xmx512m"
+
+databases:
+  # MySQL Database
+  - name: employee-task-db
+    databaseName: employee_task_tracker
+    user: taskuser
